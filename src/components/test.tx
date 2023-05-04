@@ -1,0 +1,73 @@
+import React from "react";
+import * as ReactDOMServer from "react-dom/server";
+// Import Swiper React components
+import { Swiper, SwiperSlide  } from 'swiper/react';
+import SwiperCore, { Pagination } from "swiper";
+
+import localise from '../assets/localise.jpg'
+import scan from '../assets/scan.jpg'
+import roule from '../assets/roule.jpg'
+import { Bs1Circle,Bs2Circle,Bs3Circle } from 'react-icons/bs';
+import cadre from '../assets/cadre.png'
+// Import Swiper styles
+import 'swiper/css';
+SwiperCore.use([Pagination]);
+export default () => {
+    const [swiper, setSwiper] = React.useState(null);
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+          return ReactDOMServer.renderToStaticMarkup(<div>This renderToStaticMarkup will convert your JSX into html</div>);
+        },
+      };
+  return (
+    
+        <div className="how-Steps-Container">
+                <div className="how-Step">
+                    <div className="step">
+                        <span ><Bs1Circle size="50px" /></span>
+                        <h3>LOCALISE</h3>
+                        <dic className="line-height"></dic>
+                    </div>
+                    <div className="step">
+                        <span ><Bs2Circle size="50px" /></span>
+                        <h3>SCAN</h3>
+                        <dic className="line-height"></dic>
+                    </div>
+                    <div className="step">
+                        <span ><Bs3Circle size="50px" /></span>
+                        <h3>ROULE</h3>
+                    </div>
+                </div>
+                <div className="how-Step">
+                    <div className="cadre"><img src={cadre} style={{width:'100%'}}   /></div>
+                    <Swiper
+                        
+                        pagination={pagination}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        onSlideChange={(swiper) => console.log(swiper)}
+                        onSwiper={(swiper) => {
+                            setSwiper(swiper);
+                        }}
+                        
+                        onActiveIndexChange={(swiper) => {
+                            console.log("active index is", swiper.activeIndex);
+                        }}
+                    >
+                        <SwiperSlide style={{width:'350px'}}><img src={localise} className="imgSlide"  /></SwiperSlide>
+                        <SwiperSlide style={{width:'350px'}}><img src={scan} className="imgSlide"  /></SwiperSlide>
+                        <SwiperSlide style={{width:'350px'}}><img src={roule} className="imgSlide"  /></SwiperSlide>
+
+                    </Swiper>
+                </div>
+                <div className="how-Step">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </div> 
+                  
+                
+        </div>
+            
+   
+  );
+};

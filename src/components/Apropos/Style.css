@@ -1,0 +1,283 @@
+.Apropos-Container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.QuiSommeNous-Cotainer{
+    padding: 20px;
+    background-size: 80%;
+    text-align: center;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+}
+.QuiSommeNous-Cotainer h1{
+    color: #03d3b9;
+    font-weight: 600;
+    text-align: center;
+    font-family: Rubik;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.QuiSommeNous-Cotainer p{
+    width: 60%;
+    font-size: 23px;
+    font-family: 'Ysabeau', sans-serif;
+}
+
+.IdeePogo-Conatiner{
+    background-image: url('../../assets/backgroundScooter1.png');
+    background-size: cover;
+    text-align: center;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 70%;
+    margin: 30px auto auto;
+    height: 500px;
+    padding: 0 20px 10px;
+}
+.IdeePogo-Conatiner h1{
+    color: #03d3b9;
+    font-weight: 600;
+    text-align: center;
+    font-family: Rubik;
+    margin-bottom: 45px;
+}
+
+.IdeePogo-Conatiner p{
+    color: #fff;
+    font-weight: 300;
+    font-family: 'Ysabeau', sans-serif;
+    
+}
+.IdeePogo-Conatiner span{
+    color: #03d3b9;
+    font-weight: 900;
+}
+
+.Mission-Cotainer{
+    padding: 20px;
+    background-size: 80%;
+    text-align: center;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+}
+.Mission-Cotainer h1{
+    color: #03d3b9;
+    font-weight: 600;
+    text-align: center;
+    font-family: Rubik;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.Mission-Cotainer p{
+    width: 60%;
+    font-size: 23px;
+    font-family: 'Ysabeau', sans-serif;
+}
+
+.AproposInfo-Cotainer h1{
+    color: #03d3b9;
+    font-weight: 600;
+    text-align: center;
+    font-family: Rubik;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.Info1-Container , .Info3-Container{
+    display: flex;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    border: 2px solid #03d3b9;
+   
+    margin: 45px 20px 100px 20px;
+}
+.Aprops-Img{
+    background-image: url('../../assets/bg.jpg');
+    width: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+.Aprops-Description{
+    width: 50%;
+    background-size: cover;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+.Line{
+    width: 100px;
+    height: 8px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #03d3b9;
+    margin-bottom: 20px;
+    position: relative;
+    left: 40%;
+}
+.Aprops-Description h1{
+    color: #03d3b9;
+    font-size: 35px;
+    font-family: Nunito,sans-serif;
+    font-weight: 800;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    margin-top: 8rem;
+}
+.Aprops-Description p{
+    font-size: 22px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.Info2-Container , .Info4-Container{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    border: 2px solid #03d3b9;
+   
+    margin: 45px 20px 100px 20px;
+}
+.Info2-Container .Aprops-Img{
+    background-image: url('../../assets/bg1.jpg');
+    width: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.Info3-Container .Aprops-Img{
+    background-image: url('../../assets/bg2.jpg');
+    width: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+.Info4-Container .Aprops-Img{
+    background-image: url('../../assets/bg4.jpg');
+    width: 50%;
+    background-size: cover;
+    background-position: 50%;
+}
+.Apropos-fin{
+    text-align: center;
+    font-family: Rubik;
+    font-weight: 900;
+    color: #03d3b9;
+    font-size: 45px;
+    margin: 5px;
+}
+
+
+
+
+
+
+/* Resposnive */
+
+@media (max-width:999px){
+    .IdeePogo-Conatiner {
+        width: 90%;
+        height: auto;
+        
+    }
+    .IdeePogo-Conatiner h1{
+        margin-top: 30px;
+
+    }
+    .QuiSommeNous-Cotainer p , .Mission-Cotainer p{
+        width: 100%;
+        text-align: left;
+        font-size: 26px;
+        font-family: 'Ysabeau', sans-serif;
+        padding: 10px;
+    }
+}
+
+@media (max-width:680px){
+    .Info1-Container , .Info3-Container{
+        -webkit-flex-direction: column;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column;
+        height: 100%;
+
+    }
+    .Aprops-Img{
+        background-image: url('../../assets/bg.jpg');
+        width: 100%;
+        height: 250px;
+        
+    }
+    .Aprops-Description{
+        width: 100%;
+        background-size: cover;
+        background-color: #f5f5f5;
+        text-align: center;
+    }
+    .Aprops-Description h1{
+        margin-top: 15px;
+    }
+
+    .Info2-Container , .Info4-Container{
+        -webkit-flex-direction: column;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        flex-direction: column;
+        height: 100%;
+
+    }
+    .Info2-Container .Aprops-Img{
+        background-image: url('../../assets/bg1.jpg');
+        width: 100%;
+        height: 250px;
+        
+    }
+    .Info3-Container .Aprops-Img{
+        background-image: url('../../assets/bg2.jpg');
+        width: 100%;
+        height: 250px;
+        
+    }
+    .Info4-Container .Aprops-Img{
+        background-image: url('../../assets/bg4.jpg');
+        width: 100%;
+        height: 250px;
+        
+    }
+}

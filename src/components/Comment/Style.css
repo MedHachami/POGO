@@ -1,0 +1,157 @@
+.how-Conatiner{
+    background-color: #0d1721;
+    height: 50rem;
+    border-radius: 10px;
+    margin: 45px 10px;
+}
+.how-Conatiner h1{
+    color: #03d3b9;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 24px;
+    
+}
+.how-Steps-Container{
+    display: flex;
+    
+}
+.how-Step{
+    
+    margin: 15px 15px;
+    height: 100%;
+    
+}
+.how-Step:nth-child(1){
+    margin-left: 12rem;
+    margin-top: 25px;
+}
+.how-Step:nth-child(2){
+    
+    
+    margin-left: 2rem;
+    margin-top: 12rem;
+    
+    
+    
+}
+
+.how-Step .swiper{
+    
+    position: relative;
+    height: 655px;
+    width: 300px;
+    top: -42rem;
+}
+.cadre{
+    
+    width: 350px;
+}
+.imgSlide{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.how-Step h1{
+    color: #FEFFFF;
+    font-size: 36px;
+    padding-bottom: 25px;
+    font-family: Rubik;
+
+}
+.how-Step p{
+    color: #03d3b9;
+    font-size: 26px;
+    padding-bottom: 25px;
+}
+.how-Step span{
+    color: #DEF2F1;
+    
+}
+
+/* Casque section */
+
+.casque-container {
+    display: flex;
+    margin: 20px 65px;
+   
+}
+.casque-thumb {
+    
+    padding: 35px;
+}
+.casque-thumb img{
+    width: 450px;
+    height: 345px;
+    border-radius: 20px;
+}
+.casque-description{
+    padding: 6rem ;
+    
+    
+}
+.casque-description h2{
+    color: #03d3b9;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+    
+
+.casque-description p{
+    color: #a8abad;
+    
+    font-size: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    
+}
+
+/* Vehicule section */
+.vehicule-container{
+    display: flex;
+    margin: 35px;
+    
+}
+.vehicule-thumb {
+    
+    padding: 45px;
+}
+.vehicule-thumb img{
+    width: 450px;
+    height: 345px;
+    border-radius: 20px;
+}
+.vehicule-description{
+    padding: 5rem ;
+    
+
+    
+    
+}
+.vehicule-description h2{
+    color: #03d3b9;
+    font-size: 35px;
+    font-weight: 900;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+    
+
+.vehicule-description p{
+    color: #a8abad;
+    font-size: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    
+}
+.scooter{
+    position: relative;
+    left: 5%;
+}
+
+/* Reso */
+
