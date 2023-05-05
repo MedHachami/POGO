@@ -26,18 +26,19 @@ background: linear-gradient(45deg, rgba(7,30,38,1) 100%, rgba(197,198,199,1) 100
 }
 section{
     width: 100%;
-    height: 100vh;
+    height: auto;
     box-sizing: border-box;
     padding: 60px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin-top: -135px;
-    
+   
 }
 .card{
-    position: relative;
-    max-width: 250px;
+    
+    width: 350px;
     height: auto;
     border-radius: 15px;
     margin-right: 35px;
@@ -45,6 +46,8 @@ section{
     box-shadow: 0 10px 15px;
     transition: .5s;
     text-align: center;
+    margin: 25px;
+  
     
     
 }
@@ -55,7 +58,7 @@ section{
 .card-title h2{
     color: #03d3b9;
     white-space: nowrap;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 800;
     font-family: 'PT Sans Narrow', sans-serif;
     font-family: 'Rubik', sans-serif;
@@ -73,13 +76,13 @@ section{
 .card-prixO h3{
     color: #03d3b9;
     white-space: nowrap;
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 30px;
     margin-bottom: 10px;
     font-weight: 800;
     font-family: 'PT Sans Narrow', sans-serif;
     font-family: 'Rubik', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
+    
     
 }
 .card-prixO p{
@@ -89,7 +92,7 @@ section{
     font-weight: 600;
     
 }
-.card-options ul{
+/* .card-options ul{
     margin: 0;
     padding: 0;
 }
@@ -103,8 +106,33 @@ section{
 .card-options ul li span {
     margin-left: 7px;
     font-size: 10px;
+} */
+.tarifChek-container{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    text-align: left;
 }
-
+.tarif-Chek{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    font-family: Nunito,sans-serif;
+}
+.tarif-Chek span{
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #8a8a8a;
+}
 /* Assurance section */
 .assurance-title{
     text-align: center;
@@ -127,6 +155,9 @@ section{
     
     margin-left: 35px;
     
+}
+.tarif-description p{
+    font-size: 25px;
 }
 .tarif-img{
     margin-right: 5rem;
@@ -253,15 +284,123 @@ section{
 
 /* Responsive styling */
 
-/* @media screen and (max-width: 992px) {
-    body {
-      background-color: blue;
+@media (max-width:999px){
+    /* *{
+        border: 1px solid red;
+    } */
+    .trarifCard-container{
+        width: auto;
+        display: flex;
+        flex-direction: column;
     }
-
-} */
-
-/* @media screen and (max-width: 450px) {
-    body {
-      background-color: red;
+    .tairf-Cparagraph1{
+        margin: 25px auto;
     }
-  } */
+    .tairf-Cparagraph1 p{
+        font-size: 20px;
+    }
+    .tarif-Cparagraph2{
+        margin: 25px auto;
+        width: 96%;
+        height: 310px;
+        border-radius: 20px;
+    }
+    .tarif-Cparagraph2 p{
+        margin: 4rem;
+         font-size: 36px;
+    }
+    .card{
+        width: 100%;
+        margin: 25px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tarif-Chek span{
+        margin-top: 6px;
+    }
+    .tarif-assurance{
+        
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .tarif-img{
+        display: block;
+        margin: auto;
+    }
+    
+    .tarif-description{
+        width: 100%;
+        margin: auto;
+    }
+    .tarif-description p{
+        padding: 25px;
+        text-align: center;
+    }
+    .partenariat-img{
+        margin: auto;
+        width: 50%;
+        display: flex;
+        left: 0;
+        justify-content: center;
+    }
+    .app-container{
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+    .scooter{
+        left: 0;
+        margin: auto;
+        display: block;
+    }
+    .app-description{
+        width: 90%;
+
+    }
+}
+
+@media (max-width:680px){
+     /* *{
+        border: 1px solid red;
+    } */
+    .tarif-Cparagraph2{
+        margin-bottom: 3rem;
+
+    }
+    .tarif-Cparagraph2 p{
+        font-size: 26px;
+        margin-top: 5px;
+    }
+    .trarifCard-container{
+        padding: 10px;
+    }
+    .card{
+        padding: 5px;
+        margin: 15px auto;
+        width: 95%;
+    }
+    .tarif-img{
+        width: 350px;
+
+    }
+    .scooter{
+        margin-left: 0;
+        width: 350px;
+    }
+    .scooter img{
+        
+        width: 100%;
+    }
+    .download-badgeContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .download-btn{
+        margin-bottom: 10px;
+    }
+}

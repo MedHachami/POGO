@@ -26,7 +26,7 @@ export default function Tarif() {
             <div className="tarif-Cparagraph2">
                 <p>Achetez un Pack POGO et profitez de bonus allant jusqu’à 50 DH</p>
             </div>
-            <section>
+            <section className="trarifCard-container">
                 {TarifCards}              
             </section>
             <h1 className="assurance-title">Votre assurance</h1>

@@ -15,11 +15,11 @@ export default function TarifCard(props) {
                         <p>{props.description}</p>
                     </div>
                     <div className="card-options">
-                        <ul>
-                            <li><img src={chek} style={{width:'25px'}} /><span>{props.advantages1}</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>{props.advantages2}</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>{props.advantages3}</span></li>
-                        </ul>
+                        <div className="tarifChek-container">
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>{props.advantages1}</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>{props.advantages2}</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>{props.advantages3}</span></div>
+                        </div>
                     </div>
         </div>
     )
