@@ -18,7 +18,7 @@ export default function Comment(){
         <>
         <Navbar />
         <div className="how-Conatiner">
-            <h1>Aveccc POGO, la micromobilité est simple et accessible pour tous !</h1>
+            <h1>Avec POGO, la micromobilité est simple et accessible pour tous !</h1>
             <Swiper />  
         </div>
         <div className="casque-container">

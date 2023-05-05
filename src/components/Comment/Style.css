@@ -14,16 +14,19 @@
 .how-Steps-Container{
     display: flex;
     
+    
 }
 .how-Step{
-    
+   
     margin: 15px 15px;
-    height: 100%;
+    
+    /* height: 100%; */
     
 }
 .how-Step:nth-child(1){
     margin-left: 12rem;
     margin-top: 25px;
+    margin-bottom: 0;
 }
 .how-Step:nth-child(2){
     
@@ -50,6 +53,7 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
+
 }
 
 .how-Step h1{
@@ -154,4 +158,100 @@
 }
 
 /* Reso */
+
+@media (max-width:999px){
+    .how-Conatiner{
+        height: auto;
+    }
+    .how-Steps-Container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .how-Step:nth-child(1) {
+        margin: auto;
+        padding-bottom: 0;
+    }
+    .how-Step:nth-child(2) {
+        margin-top: -38rem;
+       
+    }
+    .how-Step h1{
+        
+        color: #03d3b9;
+    }
+    .how-Step p{
+        font-size: 16px;
+        color: #FEFFFF;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    }
+    .casque-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #03d3b9;
+        border-radius: 10px;
+        margin: auto;
+        width: 90%
+    }
+    .casque-thumb{
+        display: block;
+        margin: auto;
+    }
+    .casque-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .vehicule-container{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #03d3b9;
+        border-radius: 10px;
+        margin: 20px auto;
+        width: 90%;
+    }
+    .vehicule-thumb{
+        display: block;
+        margin: auto;
+    }
+    .vehicule-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .scooter{
+        margin: auto;
+        display: block;
+        left: 0;
+    }
+    .scooter img{
+        width: 100%;
+    }
+}
+
+@media (max-width:680px){
+    /* *{
+        border: 1px solid red;
+    } */
+    .casque-thumb{
+        width: 350px;
+    }
+    .casque-thumb img{
+        width: 100%;
+    }
+    .vehicule-thumb{
+        width: 350px;
+    }
+    .vehicule-thumb img{
+        width: 100%;
+    }
+}
 

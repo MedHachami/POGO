@@ -403,4 +403,8 @@ section{
     .download-btn{
         margin-bottom: 10px;
     }
+    .card:hover{
+        transform: translateY(-25px);
+        transition: 0.2s;
+    }
 }
