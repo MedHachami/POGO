@@ -14,7 +14,9 @@ export default function Navbar(){
   };
     return(
         <nav className="navbar navbar-expand-custom navbar-mainbg">
-        <Link to='/'><img src={logo} className='navbar-brand navbar-logo logo_img' /></Link>
+        <div className='Logo-Container'>
+            <Link to='/'><img src={logo} className='navbar-brand navbar-logo logo_img' /></Link>
+        </div>
         
         {!isOpen ?
             <button className="navbar-toggler" type="button" onClick={toggleDropdown}>

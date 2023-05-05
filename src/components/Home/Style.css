@@ -146,7 +146,7 @@
 
 .Info-Cotainer{
    text-align: center;
-    width: 85%;
+    /* width: 85%; */
     margin: 110px;
 }
 
@@ -257,7 +257,7 @@
      
 }
 .scooter-Prop ul li {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin-bottom: 25px;
     
    
@@ -318,7 +318,7 @@
      
 }
 .trottinette-Prop ul li {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     margin-bottom: 25px;
     
    
@@ -416,7 +416,7 @@
 }
 .step-Header span {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 28px;
     padding: 10px;
     font-family: Nunito,sans-serif;
 }
@@ -424,8 +424,8 @@
     
     margin-left: 70px;
     margin-top: 5px;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 16px;
     font-family: Montserrat,sans-serif;
     
 }
@@ -439,6 +439,7 @@
 }
 .Coutes{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 25px;
@@ -581,6 +582,7 @@
 }
 .sponsorsImageContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     animation: scroll 161s linear 0s infinite;
     animation-play-state: run4;
@@ -590,7 +592,7 @@
 .sponsors-Thumb{
    
     margin: 35px;
-    width: 100px;
+    width: 140px;
     height: 100px;
 }
 .sponsors-Thumb img{
@@ -600,146 +602,218 @@
 }
 
 /* Resposnive  */
-@media screen and (max-width: 800px) {
-    /* html{
+
+
+@media (max-width:999px){
+    /* *{
         border: 1px solid red;
-        margin: 0;
-        padding: 0;
     } */
-    .home-Container{
+   .home-Thumb img{
+    display: none;
+   }
+   .home-Description{
+    width: -webkit-fill-available;
+    margin-right: -27px;
+    border-radius: 25px;
+    text-align: center;
+   }
+   .download-badgeContainerHome{
+    margin-top: 3rem;;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   .info-Wrapper{
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   .info-Info{
+    width: 300px;
+   }
+   .scooter-flotte{
+    flex-direction: column;
+    justify-content: center;
+    
+    
+   }
+   .scooter-Description{
+    width: 500px;
+    right: 0;
+    margin: auto;
+   }
+   .trottinette-flotte{
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin: auto;
+    vertical-align: middle;
+    
+   }
+   .scooter-thumb img  {
+    width: 400px;
+   }
+   .trottinette-thumb img{
+    width: 400px;
+    display: block;
+    left: 0;
+    margin: auto;
+   }
+   .trottinette-Description{
+    width: 500px;
+    left: 0;
+    margin: auto;
+   }
+   .HomeTarif-Container{
+    flex-direction: column;
+   }
+   .Home-Tarif{
+    margin: auto;
+    width: 95%;
+   }
+   .Tarif-Description{
+    margin: auto;
+    width: 95%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+
+   }
+   .how-Steps{
+    flex-direction: column;
+   }
+   .how-Thumb{
+    display: block;
+    margin: auto;
+    width: auto;
+    
+   }
+   .how-Thumb img{
+    left: 0;
+   }
+   .steps{
+    width: auto;
+    margin: auto;
+   }
+   
+}
+
+@media (max-width:680px){
+    *{
         border: 1px solid red;
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        height: 80vh;
     }
-    .home-Description{
-        border: 1px solid red;
+    .home-Container{
+        height: auto;
+        
+    }
+    /* .home-Description{
         width: 100%;
         height: 100%;
-    }
-    .home-Thumb , .Home_slogan{
-        display: none;
-    }
-    .info-Header{
-        padding: 0;
-        margin: auto;
-        width: 100%;
-        position: relative;
-        left: -14%;
-        
-        
-    }
-    .info-Wrapper{
-        /* border: 1px solid red; */
+    } */
+    .download-badgeContainerHome{
         display: flex;
         flex-direction: column;
-        position: relative;
-        right: 5em;
     }
-    .Homme-InnerText {
-        margin: auto;
-        width: 90%;
+    .download-btnHome{
+        margin: 10px;
     }
-    
-    .Homme-InnerText p{
+    .Home_slogan{
+        display: none;
+    }
+    .Info-Cotainer{
         width: 100%;
+        margin: auto;
+    }
+    .info-Header{
+        display: flex;
+        justify-content: center;
+    }
+    .info-Header h1{
+        text-align: center;
         font-size: 30px;
     }
-    .scooter-flotte{
+    .Homme-InnerText p{
+        font-size: 30px;
+    }
+    .Homme-InnerText p{
+        margin-top: 0;
+    }
+    .scooter-Description {
+        width: 100%;
+        height: 100%;
+
+    }
+    .scooter-thumb img{
+        left: 0;
+        width: 330px;
+    }
+    .trottinette-thumb img{
+        
+        width: 330px;
+    }
+    .trottinette-Description{
+        width: 87%;
+        height: 100%;
+        margin-top: 25px;
+       
+    }
+    .map-Container{
+        width: 90%;
+        height: 100%;
+        margin: 25px auto;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         
     }
     
-    .trottinette-flotte {
-        display: flex;
-        flex-direction: column-reverse;
-       
-        
-    }
-    .trottinette-Description{
-        right: 0;
-        margin: auto;
-    }
-    .scooter-Description {
-        left: 0;
-    }
-    .trottinette-thumb , .scooter-thumb {
-        
-        
-        width: 300px;
-        display: block;
-        margin: auto;
-        
-    }
-    .scooter-thumb img{
-        width: 100%;
-        
-    }
-    .trottinette-thumb img{
-        left: 0;
-        width: 100%;
-    }
-    
-    .map-Text{
-        position: relative;
-        right: 55%;
-        padding: 0;
-        
-    }
-    .map-Title{
-        font-size: 40px;
-    }
-    .How-Container h1{
-        font-size: 30px;
-    }
-    .how-Steps{
-        display: flex;
+    .map-Description{
         flex-direction: column;
     }
-    .steps {
-        
-        margin: auto;
-        width: 100%;
+    .map-Description img{
+        width: 340px;
+        /* position: relative;
+        right: 72px; */
+    }
+    .map-Image{
+        left: 0;
+    }
+    .map-Text{
+        padding: 15px;
+    }
+    .How-Container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .how-Thumb{
-        margin: auto;
-        width: 350px;
-        height: 400px;
-
+        display: block;
     }
     .how-Thumb img{
         width: 100%;
-        height: 100%;
     }
-    .Coutes{
-        margin: auto;
-        flex-direction: column;
-    }
-    .HomeTarif-Container{
+    .Tarif-Prop ul li {
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        white-space: normal;
     }
-    .Home-Tarif{
-        margin: auto;
+    .steps{
+        width: 300px;
     }
-    .Tarif-Description{
-        width: 80%;
-        margin-top: 25px;
+    .Coute-Container h1{
+        font-size: 30px;
+        padding: 16px;
+        
     }
-    .Tarif-Description h1 ,  .Tarif-Descriptionp p{
-        text-align: center;
-    }
-    .Tarif-Description a{
-        position: relative;
-        left: 25%;
-    }
+    /* .how-Steps{
+        border: 1px solid green;
+        width: 100%;
+        
+    } */
     
-    
-
-     
-   
 }

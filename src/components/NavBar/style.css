@@ -54,7 +54,8 @@ i {
 	overflow: hidden;
 	position: relative;
 	padding: 12px;
-    margin-left: 10rem;
+    right: 4%;
+    position: relative;
     align-items: center;
 }
 
@@ -159,7 +160,7 @@ i {
 }
 
 
-@media(min-width: 992px){
+@media(min-width: 1000px){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
@@ -178,6 +179,10 @@ i {
 	    display: flex!important;
 	    -ms-flex-preferred-size: auto;
 	    flex-basis: auto;
+		margin: auto;
+	}
+	.register-btn{
+		height: auto;
 	}
 }
 
@@ -186,39 +191,6 @@ i {
 	.navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
-	.hori-selector{
-		margin-top: 0px;
-		margin-left: 10px;
-		border-radius: 0;
-		border-top-left-radius: 25px;
-		border-bottom-left-radius: 25px;
-	}
-	.hori-selector .left,
-	.hori-selector .right{
-		right: 10px;
-	}
-	.hori-selector .left{
-		top: -25px;
-		left: auto;
-	}
-	.hori-selector .right{
-		bottom: -25px;
-	}
-	.hori-selector .left:before{
-		left: -25px;
-		top: -25px;
-	}
-	.hori-selector .right:before{
-		bottom: -25px;
-		left: -25px;
-	}
+	
 }
 
-/* Resposnive  */
-@media screen and (max-width: 800px) {
-   
-   .navbar{
-	border: 1px solid red;
-	width: 100%;
-   }
-}
