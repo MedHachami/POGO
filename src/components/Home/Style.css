@@ -700,9 +700,9 @@
 }
 
 @media (max-width:680px){
-    *{
+    /* *{
         border: 1px solid red;
-    }
+    } */
     .home-Container{
         height: auto;
         
