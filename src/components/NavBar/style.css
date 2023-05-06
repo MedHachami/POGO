@@ -14,6 +14,13 @@ i {
 .navbar{
 	display: flex;
 }
+.fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+}
 .logo_img{
 	padding: 15px;
 	color: #fff;

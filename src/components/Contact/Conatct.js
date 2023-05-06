@@ -5,18 +5,33 @@ import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLocationDot , faPhone , faAt} from '@fortawesome/free-solid-svg-icons'
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact(){
+    const history = useNavigate();
     const [fisrtName, setfisrtName] = useState('');
     const [secondName, setsecondName] = useState('');
     const [email, setEmail] = useState('');
     const [sujet, setSujet] = useState('')
     const [message, setMessage] = useState('');
 
+ 
+  const sendRequest = async ()=>{
+    await axios.post("",{
+        fisrtName:fisrtName,
+        secondName:setsecondName,
+        email:email,
+        sujet:sujet,
+        message:message
+
+    }).then((res)=>res.data)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // handle form submission
+    sendRequest().then(()=>history('/contact'))
+
   };
 
   const handleFirstNameChange = (event) => {

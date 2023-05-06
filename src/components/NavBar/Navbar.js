@@ -7,13 +7,21 @@ import logo from '../../assets/pogo_logo.png'
 import {NavLink , Link}from "react-router-dom";
 export default function Navbar(){
     const [isOpen, setIsOpen] = useState(false);
-
+    const[fix,setFix] = useState(false)
+    const setFixed = ()=>{
+      if(window.scrollY>600){
+        setFix(true)
+      }else{
+        setFix(false)
+      }
+    }
+    window.addEventListener('scroll',setFix)
   const toggleDropdown = () => {
 
     setIsOpen(!isOpen);
   };
     return(
-        <nav className="navbar navbar-expand-custom navbar-mainbg">
+        <nav className={fix?`navbar fixed navbar-expand-custom navbar-mainbg`:`navbar navbar-expand-custom navbar-mainbg`}>
         <div className='Logo-Container'>
             <Link to='/'><img src={logo} className='navbar-brand navbar-logo logo_img' /></Link>
         </div>
