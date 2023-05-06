@@ -9,7 +9,7 @@ export default function Navbar(){
     const [isOpen, setIsOpen] = useState(false);
     const[fix,setFix] = useState(false)
     const setFixed = ()=>{
-      if(window.scrollY>600){
+      if(window.scrollY>10000){
         setFix(true)
       }else{
         setFix(false)
