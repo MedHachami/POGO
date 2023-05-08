@@ -98,7 +98,7 @@ export default function Reserver(){
                 </div>
                 <div className="offre-Container">
                     <div className="offre-Card">
-                        <h1>24H/69DH</h1>
+                        <h1>24 H / 69 DH</h1>
                         <span className="distance">Vous aurez droit à 25 km</span>
                         <div className="card-options">
                         <div className="tarifChek-container">
@@ -109,7 +109,7 @@ export default function Reserver(){
                     </div>
                 </div>
                 <div className="offre-Card">
-                        <h1>24H/99DH</h1>
+                        <h1>24H / 99 DH</h1>
                         <span className="distance">Vous aurez droit à 50 km</span>
                         <div className="card-options">
                             <div className="tarifChek-container">
