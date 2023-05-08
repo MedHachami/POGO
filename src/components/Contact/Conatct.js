@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Contact(){
     const history = useNavigate();
-    const [fisrtName, setfisrtName] = useState('');
+    const [firstName, setfirstName] = useState('');
     const [secondName, setsecondName] = useState('');
     const [email, setEmail] = useState('');
     const [sujet, setSujet] = useState('')
@@ -19,7 +19,7 @@ export default function Contact(){
  
   const sendRequest = async ()=>{
     await axios.post("",{
-        fisrtName:fisrtName,
+        firstName:firstName,
         secondName:setsecondName,
         email:email,
         sujet:sujet,
@@ -30,12 +30,19 @@ export default function Contact(){
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log({
+        firstName:firstName,
+        secondName:setsecondName,
+        email:email,
+        sujet:sujet,
+        message:message
+    });
     sendRequest().then(()=>history('/contact'))
 
   };
 
   const handleFirstNameChange = (event) => {
-    setfisrtName(event.target.value);
+    setfirstName(event.target.value);
   };
   const handlesecondNameChange = (event) => {
     setsecondName(event.target.value);
@@ -98,10 +105,10 @@ export default function Contact(){
                         <span className="Input_Titile">Nom</span>
                         <input
                             type="text"
-                            name="firsrName"
+                            name="firsTName"
                             placeholder="Votre Nom"
                             autoComplete="on"
-                            value={fisrtName}
+                            value={firstName}
                             onChange={handleFirstNameChange}
                             required
                         />
@@ -161,7 +168,7 @@ export default function Contact(){
                             type="submit"
                             id="form-submit"
                             className="main-gradient-button"
-                            disabled={!fisrtName || !secondName || !sujet || !email || !message}
+                            disabled={!firstName || !secondName || !sujet || !email || !message}
                         >
                             Envoyer le message
                         </button>

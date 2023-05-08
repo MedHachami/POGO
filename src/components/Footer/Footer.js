@@ -23,11 +23,11 @@ export default function Footer(){
   	 			<h4>LIENS RAPIDES</h4>
   	 			<ul>
   	 				<li className='footer-links' ><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faHouse} /><Link to="#">Acceuil</Link></li>
-  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faAddressCard} /><Link to="#">À propos</Link></li>
-  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faCircleInfo} /><Link to="#">Comment ça marche</Link></li>
-  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faCreditCard} /><Link to="#"> Nos tarifs</Link></li>
-  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faFileContract} /><Link to="#">Reserver</Link></li>
-                    <li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faComment} /><Link to="#">Contactez-nous</Link></li>
+  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faAddressCard} /><Link to="/about">À propos</Link></li>
+  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faCircleInfo} /><Link to="/comment">Comment ça marche</Link></li>
+  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faCreditCard} /><Link to="/tarif"> Nos tarifs</Link></li>
+  	 				<li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faFileContract} /><Link to="/reserver">Reserver</Link></li>
+                    <li className='footer-links'><FontAwesomeIcon style={{color: "#66fcf1",}} icon={faComment} /><Link to="/contact">Contactez-nous</Link></li>
   	 			</ul>
   	 		</div>
   	 		<div className="footer-col">
