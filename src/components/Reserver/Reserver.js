@@ -22,6 +22,18 @@ export default function Reserver(){
         },
        
       ];
+      const offreOptions = [
+        {
+          label: "24H / 69 DH",
+          value: "offre1",
+        },
+        {
+          label: "24H /99 DH",
+          value: "offre2",
+        },
+        
+       
+      ];
     const [dateLivraison,setdateLivraison] = useState('')
     const[heureLivraison,setheureLivraison] = useState('')
     const[dateRamassage,setdateRamassage] = useState('')
@@ -30,6 +42,7 @@ export default function Reserver(){
     const[NombreMoto,setNombreMoto] = useState('')
     const[tele,setTele] = useState('')
     const[place,setPlace] = useState('fes')
+    const [offre,setOffre] = useState('offre1')
 
     const handledateLivraison = (event) => {
         setdateLivraison(event.target.value);
@@ -56,17 +69,20 @@ export default function Reserver(){
       const handlePlace = (event) => {
         setPlace(event.target.value);
       };
+      const handleOffre = (event) => {
+        setOffre(event.target.value);
+      };
 
       const sendRequest = async ()=>{
         await axios.post("",{
-            place:place,
-            dateLivraison:dateLivraison,
-            heureLivraison:heureLivraison,
-            dateRamassage:dateRamassage,
-            heureRamassage:heureRamassage,
-            Nom:Nom,
-            NombreMoto:NombreMoto,
-            tele:tele
+           adress:place,
+           clientId:null,
+           phoneNumber:tele,
+           pickupDate:dateLivraison,
+           returnDate:dateRamassage,
+           amount:NombreMoto,
+           rentOffer:offre,
+           orderType:'onArrival'
 
 
     
@@ -76,14 +92,14 @@ export default function Reserver(){
       const handleSubmit = (event) => {
         event.preventDefault();
         console.log({
-            place:place,
-            dateLivraison:dateLivraison,
-            heureLivraison:heureLivraison,
-            dateRamassage:dateRamassage,
-            heureRamassage:heureRamassage,
-            Nom:Nom,
-            NombreMoto:NombreMoto,
-            tele:tele
+          adress:place,
+          clientId:null,
+          phoneNumber:tele,
+          pickupDate:dateLivraison,
+          returnDate:dateRamassage,
+          amount:NombreMoto,
+          rentOffer:offre,
+          orderType:'onArrival'
         });
         sendRequest().then(()=>history('/reserver'))
     
@@ -121,7 +137,7 @@ export default function Reserver(){
                     </div>
                 
                 </div>
-                <div className="constact-form" >
+                <div className="reserver-form" >
                     <form id="contact" onSubmit={handleSubmit} >
                         
                         <div className="inputField">
@@ -215,6 +231,17 @@ export default function Reserver(){
                             onChange={handleNombreMoto}
                             required
                         />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Place de la livraison</span>
+                        <select onChange={handleOffre}>
+                        {
+                            offreOptions.map((option) => (
+                             <option value={option.value}>{option.label}</option>
+                        ))
+                        }
+                        </select>
                         <span className="valid_info_name"></span>
                         </div>
                         <div className="inputField btn">

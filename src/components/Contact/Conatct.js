@@ -96,7 +96,7 @@ export default function Contact(){
                         </div>
                     </div>
                 </div>
-                <div className="constact-form" >
+                <div className="contact-form" >
                     <form id="contact" onSubmit={handleSubmit}>
                         <div className="section-heading">
                         
@@ -108,8 +108,8 @@ export default function Contact(){
                             name="firsTName"
                             placeholder="Votre Nom"
                             autoComplete="on"
-                            value={firstName}
-                            onChange={handleFirstNameChange}
+                            value={secondName}
+                            onChange={handlesecondNameChange}
                             required
                         />
                         <span className="valid_info_name"></span>
@@ -121,8 +121,8 @@ export default function Contact(){
                             name="secondName"
                             placeholder="Votre Prenom"
                             autoComplete="on"
-                            value={secondName}
-                            onChange={handlesecondNameChange}
+                            value={firstName}
+                            onChange={handleFirstNameChange}
                             required
                         />
                         <span className="valid_info_name"></span>

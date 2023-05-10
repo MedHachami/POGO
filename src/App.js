@@ -1,5 +1,6 @@
 
 import React from "react";
+import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import Apropos from './components/Apropos/Apropos'
 import Home from './components/Home/Home'
 import Tarif from './components/Tarif/Tarif'
@@ -7,7 +8,9 @@ import Comment from './components/Comment/Comment'
 import Gallery from './components/Gallery/Gallery'
 import Contact from './components/Contact/Conatct'
 import Reserver from './components/Reserver/Reserver'
-import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+import Registration from "./components/Registration/Registration";
+
+
 export default function App() {
   return (
     <Router>
@@ -18,7 +21,8 @@ export default function App() {
         <Route  path="/comment" element = {<Comment />}></Route>
         <Route  path="/gallery" element = {<Gallery />}></Route>
         <Route  path="/contact" element = {<Contact />}></Route>
-        <Route  path="/reserver" element = {<Reserver />}></Route>        
+        <Route  path="/reserver" element = {<Reserver />}></Route> 
+        <Route  path="/registration" element = {<Registration />}></Route>       
       </Routes>       
     </Router>
   );
