@@ -72,7 +72,7 @@
     font-weight: 300;
     color: #000;
 }
-.constact-form{
+.contact-form{
     /* border: 1px solid red; */
     display: block;
   width: 40%;
@@ -223,8 +223,8 @@ input, textarea,select {
    .contact_info{
     width: 300px;
    }
-   .constact-form{
-    width: 100%;
+   .contact-form{
+    width: 90%;
    }
 }
 
