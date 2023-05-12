@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
@@ -10,10 +10,27 @@ import packData from "./packData";
 import TarifCard from "./TarifCard";
 import PSbadge from '../../assets/ps.png'
 import './style.css'
+import axios from "axios";
 export default function Tarif() {
-    const TarifCards = packData.map((ele)=>{
+    const [pack, setPack] = useState([]);
+
+const fetchHandler = async () => {
+  try {
+    const response = await axios.post('http://gounane.ovh:3000/package');
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
+useEffect(() => {
+  fetchHandler().then((data) => setPack(data.splice(0).reverse()))
+}, []);
+    const TarifCards = pack.map((packEL)=>{
         return(
-            <TarifCard {...ele} />
+            <TarifCard key={packEL._id} {...packEL} />
         )
     })
     return (

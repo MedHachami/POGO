@@ -38,7 +38,7 @@ section{
 }
 .card{
     
-    width: 350px;
+    width: 325px;
     height: auto;
     border-radius: 15px;
     margin-right: 35px;
@@ -52,8 +52,8 @@ section{
     
 }
 .card:hover{
-    transform: translateY(-35px);
-    transition: 0.2s;
+    transform: translateY(-10px);
+    transition: 0.7s;
 }
 .card-title h2{
     color: #03d3b9;
@@ -86,9 +86,9 @@ section{
     
 }
 .card-prixO p{
-    color: #1F2833;
+    color: #8a8a8a;
     margin: 5px 0;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     
 }
