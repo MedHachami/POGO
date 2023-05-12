@@ -35,7 +35,7 @@ export default function Footer(){
   	 			<ul>
   	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="#">Termes et Conditions </Link></li>
   	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="#">Politique de confidentialite</Link></li>
-  	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="#"> FAQ</Link></li>
+  	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="/faquestion"> FAQ</Link></li>
   	 			</ul>
   	 		</div>
   	 		<div className="footer-col">
