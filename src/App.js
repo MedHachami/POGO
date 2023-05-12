@@ -9,7 +9,7 @@ import Gallery from './components/Gallery/Gallery'
 import Contact from './components/Contact/Conatct'
 import Reserver from './components/Reserver/Reserver'
 import Registration from "./components/Registration/Registration";
-
+import Faquestion from "./components/Faquestion/Faquestion";
 
 export default function App() {
   return (
@@ -22,7 +22,8 @@ export default function App() {
         <Route  path="/gallery" element = {<Gallery />}></Route>
         <Route  path="/contact" element = {<Contact />}></Route>
         <Route  path="/reserver" element = {<Reserver />}></Route> 
-        <Route  path="/registration" element = {<Registration />}></Route>       
+        <Route  path="/registration" element = {<Registration />}></Route>
+        <Route  path="/faquestion" element = {<Faquestion />}></Route>      
       </Routes>       
     </Router>
   );
