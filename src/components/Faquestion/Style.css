@@ -1,0 +1,94 @@
+.faq-title{
+    background-color: #0d1721;
+    padding: 5px 50px;
+    border-radius: 5px;
+    /* margin-bottom: 30px;
+    margin-top: 65px; */
+    margin: 65px auto;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   /* padding: 10px; */
+}
+.faq-title h1{
+    margin: 0;
+    color: #fff;
+    border-bottom: 5px solid #03d3b9;
+}
+.fa-questions{
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    margin-top: 50px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+.faq_questionContainer{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 10px;
+    
+}   
+
+.fa-question{
+    font-family: Montserrat,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    background-color: rgba(3,211,185,.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    
+}
+.fa-question p{
+    position: relative;
+    top: 7px;
+}
+
+.fa-answer{
+    padding: 5px 10px;
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+/*responsive*/
+@media(max-width: 999px){
+    .faq_questionContainer{
+        width: 95%;
+    }
+  }
+  @media(max-width: 680px){
+  
+  }
+  
