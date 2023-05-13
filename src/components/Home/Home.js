@@ -246,13 +246,26 @@ export default function Home(){
             </div>
             <div className="sponsors">
                 <h1>Nos partenaires</h1>
-                <div className="sponsorsImageContainer">
-                    <div className="sponsors-Thumb"><img src={UEMF}  /></div>
-                    <div className="sponsors-Thumb"><img src={bp}  /></div>
-                    <div className="sponsors-Thumb"><img src={aloula}  /></div>
-                    <div className="sponsors-Thumb"><img src={ccg}  /></div>
-                    <div className="sponsors-Thumb"><img src={emob1}  /></div>
-                    <div className="sponsors-Thumb"><img src={pp}  /></div>
+                <div className="marquee-container">
+                    <div className="overlay">
+
+                    </div>
+                    <div className="marquee">
+                        <div className="sponsors-Thumb"><img src={UEMF}  /></div>
+                        <div className="sponsors-Thumb"><img src={bp}  /></div>
+                        <div className="sponsors-Thumb"><img src={aloula}  /></div>
+                        <div className="sponsors-Thumb"><img src={ccg}  /></div>
+                        <div className="sponsors-Thumb"><img src={emob1}  /></div>
+                        <div className="sponsors-Thumb"><img src={pp}  /></div>
+                    </div>
+                    <div className="marquee">
+                        <div className="sponsors-Thumb"><img src={UEMF}  /></div>
+                        <div className="sponsors-Thumb"><img src={bp}  /></div>
+                        <div className="sponsors-Thumb"><img src={aloula}  /></div>
+                        <div className="sponsors-Thumb"><img src={ccg}  /></div>
+                        <div className="sponsors-Thumb"><img src={emob1}  /></div>
+                        <div className="sponsors-Thumb"><img src={pp}  /></div>
+                    </div>
                 </div>
             </div>
             <Footer />
@@ -260,3 +273,4 @@ export default function Home(){
         
     )
 }
+

@@ -580,18 +580,11 @@
     font-weight: bold;
     margin-top: 15px;
 }
-.sponsorsImageContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: scroll 161s linear 0s infinite;
-    animation-play-state: run4;
-    animation-delay: 0s;
-    animation-direction: normal;
-}
+
 .sponsors-Thumb{
    
-    margin: 35px;
+    /* margin: 35px; */
+    margin:35px 105px;
     width: 140px;
     height: 100px;
 }
@@ -599,7 +592,49 @@
     width: 100%;
     height: 100%;
     
+    
 }
+
+.marquee-container{
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative;
+    width: 100%;
+  
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.overlay::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.overlay::before {
+    left: 0;
+    top: 0;
+}
+.marquee{
+    flex: 0 0 auto;
+    min-width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    animation: scroll 141s linear 0s infinite;
+    animation-iteration-count: infinite;
+}
+@keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 
 /* Resposnive  */
 
@@ -810,10 +845,11 @@
         padding: 16px;
         
     }
-    /* .how-Steps{
-        border: 1px solid green;
-        width: 100%;
+    .sponsors-Thumb{
+   
+        /* margin: 35px; */
+        margin-right: 15px;
         
-    } */
+    }
     
 }
