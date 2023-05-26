@@ -1,6 +1,8 @@
 *{
     padding: 0;
     margin: 0;
+    
+    
 }
 .home-Container{
     /* margin-top: 10px; */
@@ -205,6 +207,9 @@
 .scooter-flotte  {
     display: flex;
     padding: 25px;
+    justify-content: space-between;
+    margin: auto;
+    width: 95%;
 }
 .Flotte-title{
     
@@ -229,8 +234,8 @@
     width: 430px;
     height: auto;
     padding: 20px;
-    position: relative;
-    right: -30%;
+    /* position: relative;
+    right: -30%; */
 }
 .scooter-Description h1{
     color: #03d3b9;
@@ -273,12 +278,15 @@
 .trottinette-flotte{
     display: flex;
     margin-top: 45px;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
     
 }
 .trottinette-thumb img{
     width: 450px;
-    position: relative;
-    left: 27rem;
+    /* position: relative;
+    left: 27rem; */
 }
 .trottinette-Description{
     background-size: cover;
@@ -288,8 +296,9 @@
     width: 430px;
     height: 80vh;
     padding: 20px;
-    position: relative;
-    right: -10%;
+    margin-left: 5rem;
+    /* position: relative;
+    right: -10%; */
     
 }
 
@@ -462,7 +471,7 @@
 /* How Much section */
 
 .HomeTarif-Container{
-    
+    justify-content: space-between;
     display: flex;
 }
 .Home-Tarif{
@@ -539,7 +548,7 @@
     
     width: 40%;
     position: relative;
-    left: 15%;
+    /* left: 14%; */
     padding-top: 5em;
 }
 .Tarif-Description h1{
