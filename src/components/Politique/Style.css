@@ -1,0 +1,79 @@
+.politique-Container{
+    color: #fff;
+    margin: 80px auto;
+    width: 98%;
+    height: 546px;
+    border-radius: 25px;
+    background-image: url('../../assets/banner.jfif');
+    background-size: cover;
+    background-position: 50%;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    font-family: Nunito,sans-serif;
+    overflow: hidden;
+}
+.politique-Filter{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13,23,33,.8);
+    padding: 50px;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+}
+.politique-Filter h1{
+    text-transform: uppercase;
+    font-size: 55px;
+}
+.politique-Filter h1::after{
+    display: block;
+    content: "";
+    border-bottom: 5px solid #03d3b9;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 1px;
+   transition: 0.3s;
+}
+.politique_TextContainer{
+    font-family: 'Ysabeau', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.politique-Title{
+    color: #03d3b9;
+    font-size: 26px;
+    text-decoration: underline;
+    font-size: 22px;
+}
+.politique-Thumb img{
+    width: 550px;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+    .politique-Thumb{
+        display: flex;
+        justify-content: center;
+
+    }
+  }
+  @media(max-width: 574px){
+
+    .politique-Thumb{
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    .politique-Thumb img{
+        width: 100%;
+    }
+  }
+  

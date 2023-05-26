@@ -11,7 +11,7 @@ import Reserver from './components/Reserver/Reserver'
 import Registration from "./components/Registration/Registration";
 import Faquestion from "./components/Faquestion/Faquestion";
 import Termes from "./components/Termes/Termes";
-
+import Politique from "./components/Politique/Politique";
 export default function App() {
   return (
     <Router>
@@ -25,7 +25,8 @@ export default function App() {
         <Route  path="/reserver" element = {<Reserver />}></Route> 
         <Route  path="/registration" element = {<Registration />}></Route>
         <Route  path="/faquestion" element = {<Faquestion />}></Route> 
-        <Route  path="/termesetconditions" element = {<Termes />}></Route>      
+        <Route  path="/termesetconditions" element = {<Termes />}></Route>
+        <Route  path="/politique-de-confidentialite" element = {<Politique />}></Route>       
       </Routes>       
     </Router>
   );
