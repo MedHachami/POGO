@@ -72,7 +72,7 @@ export default function Politique(){
                 <div className="politique-Thumb" onClick={()=>getImg(pc)}>
                     <img src={pc} />
                 </div>
-                <div className="politique-Thumb" onClick={()=>getImg(pc1add)}>
+                <div className="politique-Thumb" onClick={()=>getImg(pc1)}>
                     <img src={pc1} />
                 </div>
                 <div>
