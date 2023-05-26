@@ -33,7 +33,7 @@ export default function Footer(){
   	 		<div className="footer-col">
   	 			<h4>LIENS UTILES</h4>
   	 			<ul>
-  	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="#">Termes et Conditions </Link></li>
+  	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="/termesetconditions">Termes et Conditions </Link></li>
   	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="#">Politique de confidentialite</Link></li>
   	 				<li className='footer-links' style={{color: "#66fcf1",}}><FontAwesomeIcon icon={faLink} /><Link to="/faquestion"> FAQ</Link></li>
   	 			</ul>

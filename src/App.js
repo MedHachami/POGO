@@ -10,6 +10,7 @@ import Contact from './components/Contact/Conatct'
 import Reserver from './components/Reserver/Reserver'
 import Registration from "./components/Registration/Registration";
 import Faquestion from "./components/Faquestion/Faquestion";
+import Termes from "./components/Termes/Termes";
 
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
         <Route  path="/contact" element = {<Contact />}></Route>
         <Route  path="/reserver" element = {<Reserver />}></Route> 
         <Route  path="/registration" element = {<Registration />}></Route>
-        <Route  path="/faquestion" element = {<Faquestion />}></Route>      
+        <Route  path="/faquestion" element = {<Faquestion />}></Route> 
+        <Route  path="/termesetconditions" element = {<Termes />}></Route>      
       </Routes>       
     </Router>
   );

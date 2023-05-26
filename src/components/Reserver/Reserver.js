@@ -1,4 +1,4 @@
-import React ,{ useState } from "react";
+import React ,{ useState , useEffect } from "react";
 import './Style.css'
 import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
@@ -6,7 +6,24 @@ import chek from '../../assets/check1.png'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function Reserver(){
+  const [offres,setOffres] = useState([])
     const history = useNavigate();
+    const fetchHandler = async () => {
+      try {
+        const response = await axios.post('http://gounane.ovh:3000/rentOffer');
+        console.log(response.data);
+        return response.data;
+      } catch (error) {
+        console.error(error);
+        return error;
+      }
+    };
+    
+    useEffect(() => {
+      fetchHandler().then((data) => setOffres(data.splice(0).reverse()))
+    }, []);
+    console.log(offres
+      );
     const options = [
         {
           label: "Fès",
@@ -35,9 +52,7 @@ export default function Reserver(){
        
       ];
     const [dateLivraison,setdateLivraison] = useState('')
-    const[heureLivraison,setheureLivraison] = useState('')
     const[dateRamassage,setdateRamassage] = useState('')
-    const[heureRamassage,setheureRamassage] = useState('')
     const[Nom,setNom]= useState('')
     const[NombreMoto,setNombreMoto] = useState('')
     const[tele,setTele] = useState('')
@@ -47,15 +62,11 @@ export default function Reserver(){
     const handledateLivraison = (event) => {
         setdateLivraison(event.target.value);
       };
-      const handleheureLivraison = (event) => {
-        setheureLivraison(event.target.value);
-      };
+      
       const handledateRamassage = (event) => {
         setdateRamassage(event.target.value);
       };
-      const handleheureRamassage = (event) => {
-        setheureRamassage(event.target.value);
-      };
+      
       const handleNom = (event) => {
         setNom(event.target.value);
       };
@@ -154,7 +165,7 @@ export default function Reserver(){
                         <div className="inputField">
                         <span className="Input_Titile">Date de livraison</span>
                         <input
-                            type="date"
+                            type="datetime-local"
                             autoComplete="on"
                             value={dateLivraison}
                             onChange={handledateLivraison}
@@ -162,22 +173,11 @@ export default function Reserver(){
                         />
                         <span className="valid_info_name"></span>
                         </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Heure de livraison</span>
-                        <input
-                            type="text"
-                            placeholder="01:00 "
-                            autoComplete="on"
-                           value={heureLivraison}
-                            onChange={handleheureLivraison}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
+                        
                         <div className="inputField">
                         <span className="Input_Titile">Date de ramassage</span>
                         <input
-                            type="date"
+                            type="datetime-local"
                             autoComplete="on"
                             value={dateRamassage}
                             onChange={handledateRamassage}
@@ -185,18 +185,7 @@ export default function Reserver(){
                         />
                         <span className="valid_info_name"></span>
                         </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Heure de ramassage</span>
-                        <input
-                            type="text"
-                            placeholder="01:00 "
-                            autoComplete="on"
-                            value={heureRamassage}
-                            onChange={handleheureRamassage}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
+                        
                         <div className="inputField">
                         <span className="Input_Titile">Nom complet</span>
                         <input
@@ -249,7 +238,7 @@ export default function Reserver(){
                             type="submit"
                             id="form-submit"
                             className="main-gradient-button"
-                            disabled={!dateLivraison || !heureLivraison || !dateRamassage || !heureRamassage || !Nom || !NombreMoto || !tele }
+                            disabled={!dateLivraison ||  !dateRamassage  || !Nom || !NombreMoto || !tele }
                         >
                             Envoyer le message
                         </button>

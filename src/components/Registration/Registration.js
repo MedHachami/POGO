@@ -1,4 +1,4 @@
-import React ,{ useState } from "react";
+import React ,{ useState,useEffect } from "react";
 import './Style.css'
 import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
@@ -6,30 +6,47 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function Registration(){
   const history = useNavigate();
-    const [city,setCity] = useState('fes')
+    const [city,setCity] = useState([])
     const [firstName, setfirstName] = useState('');
     const [secondName, setsecondName] = useState('');
     const [email, setEmail] = useState('');
     const [UserName,setUserName] =useState('')
     const [password,setPassword] = useState('')
     const[tele,setTele] = useState('')
-   
-    const options = [
-        {
-          label: "Fès",
-          value: "fes",
-        },
-        {
-          label: "Rabat",
-          value: "rabat",
-        },
-        {
-          label: "Ben Guerir",
-          value: "ben guerir",
-        },
-       
-      ];
+    const[chekedCity,setCheckedcity]=useState()
+    const sendRequest = async ()=>{
+      await axios.post("http://gounane.ovh:3000/client/create",{
+         email:email,
+         phoneNumber:tele,
+         city:chekedCity,
+         language:"English",
+         username:UserName,
+         password:password,
+         nom:secondName,
+         prenom:firstName
 
+
+  
+      }).then((res)=>console.log(res.data))
+    }
+  
+    const [test,setTest] = useState('')
+    const fetchHandler = async () => {
+      try {
+        const response = await axios.post('http://gounane.ovh:3000/zone/zones');
+        console.log(response.data);
+        return response.data;
+      } catch (error) {
+        console.error(error);
+        return error;
+      }
+    };
+    
+    useEffect(() => {
+      fetchHandler().then((data) => setCity(data))
+    }, []);
+
+  
       
       const handleFirstNameChange = (event) => {
         setfirstName(event.target.value);
@@ -51,39 +68,22 @@ export default function Registration(){
         setTele(event.target.value);
       };
       const handleCity = (event) => {
-        setCity(event.target.value);
+        setCheckedcity(event.target.value);
       };
-      const sendRequest = async ()=>{
-        await axios.post("",{
-           nom:secondName,
-           prenom:firstName,
-           email:email,
-           password:password,
-           username:UserName,
-           customerId:'null',
-           city:city,
-           language:'x',
-           phoneNumber:tele
-
-
-    
-        }).then((res)=>res.data)
-      }
-    
+     
       const handleSubmit = (event) => {
         event.preventDefault();
         console.log({
-          nom:secondName,
-          prenom:firstName,
           email:email,
-          password:password,
+          phoneNumber:tele,
+          city:chekedCity,
+          language:"English",
           username:UserName,
-          customerId:'null',
-          city:city,
-          language:'x',
-          phoneNumber:tele
+          password:password,
+          nom:secondName,
+          prenom:firstName
         });
-        sendRequest().then(()=>history('/reserver'))
+        sendRequest().then(()=>alert("Form Submitted Successfully"))
     
       }; 
 
@@ -173,9 +173,10 @@ export default function Registration(){
                         <div className="inputField">
                         <span className="Input_Titile">City</span>
                         <select onChange={handleCity}>
+                          <option>--City--</option>
                         {
-                            options.map((option) => (
-                             <option value={option.value}>{option.label}</option>
+                            city.map((city) => (
+                             <option value={city._id}>{city.zoneName}</option>
                         ))
                         }
                         </select>
