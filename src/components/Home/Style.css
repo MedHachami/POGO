@@ -548,7 +548,7 @@
     
     width: 40%;
     position: relative;
-    /* left: 14%; */
+    margin: 25px;
     padding-top: 5em;
 }
 .Tarif-Description h1{
