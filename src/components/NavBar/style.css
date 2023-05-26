@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body{
-	font-family: 'Roboto', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Oswald:wght@300&family=Tajawal:wght@700&display=swap');
 * {
 	margin: 0;
 	padding: 0;
@@ -82,10 +79,13 @@ i {
 }
 .navbarSupportedContent ul li a{
 	color: #C5C6C7;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    /* font-weight: 700; */
+	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Tajawal', sans-serif;
     text-decoration: none;
-    font-size: 12px;
+   
     display: block;
     padding: 10px 10px;
     transition-duration:0.6s;
