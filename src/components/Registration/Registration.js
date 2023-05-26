@@ -14,26 +14,26 @@ export default function Registration(){
     const [password,setPassword] = useState('')
     const[tele,setTele] = useState('')
     const[chekedCity,setCheckedcity]=useState()
-    const sendRequest = async ()=>{
-      await axios.post("http://gounane.ovh:3000/client/create",{
-         email:email,
-         phoneNumber:tele,
-         city:chekedCity,
-         language:"English",
-         username:UserName,
-         password:password,
-         nom:secondName,
-         prenom:firstName
+    // const sendRequest = async ()=>{
+    //   await axios.post("http://gounane.ovh:3000/client/create",{
+    //      email:email,
+    //      phoneNumber:tele,
+    //      city:chekedCity,
+    //      language:"English",
+    //      username:UserName,
+    //      password:password,
+    //      nom:secondName,
+    //      prenom:firstName
 
 
   
-      }).then((res)=>console.log(res.data))
-    }
+    //   }).then((res)=>console.log(res.data))
+    // }
   
     const [test,setTest] = useState('')
     const fetchHandler = async () => {
       try {
-        const response = await axios.post('http://gounane.ovh:3000/zone/zones');
+        // const response = await axios.post('http://gounane.ovh:3000/zone/zones');
         console.log(response.data);
         return response.data;
       } catch (error) {
