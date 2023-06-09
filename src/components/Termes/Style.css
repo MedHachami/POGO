@@ -88,3 +88,17 @@ tbody tr td {
     border-bottom:1px solid #e0e0e0;
     
   }
+
+  @media(max-width: 574px){
+    
+    .termes-Filter h1{
+        text-align: center;
+        font-size: 32px;
+        
+    }
+    .termes-Filter h1::after{
+        width: 95%;
+        margin-top: 3px;
+    }
+  }
+  

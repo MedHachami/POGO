@@ -75,5 +75,14 @@
     .politique-Thumb img{
         width: 100%;
     }
+    .politique-Filter h1{
+        text-align: center;
+        font-size: 32px;
+        
+    }
+    .politique-Filter h1::after{
+        width: 95%;
+        margin-top: 3px;
+    }
   }
   

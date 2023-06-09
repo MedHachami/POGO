@@ -15,7 +15,7 @@ export default function Registration(){
     const[tele,setTele] = useState('')
     const[chekedCity,setCheckedcity]=useState()
     const sendRequest = async ()=>{
-      await axios.post("http://gounane.ovh:3000/client/create",{
+      await axios.post("http://pogo.gounane.ovh:3000/client/create",{
          email:email,
          phoneNumber:tele,
          city:chekedCity,
@@ -33,7 +33,7 @@ export default function Registration(){
    
     const fetchHandler = async () => {
       try {
-        const response = await axios.post('http://gounane.ovh:3000/zone/zones');
+        const response = await axios.post('http://pogo.gounane.ovh:3000/zone/zones');
         console.log(response.data);
         return response.data;
       } catch (error) {

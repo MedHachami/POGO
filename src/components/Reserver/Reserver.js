@@ -7,23 +7,25 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function Reserver(){
   const [offres,setOffres] = useState([])
+  const [test,setTest] =useState({})
     const history = useNavigate();
     const fetchHandler = async () => {
       try {
-        const response = await axios.post('http://gounane.ovh:3000/rentOffer');
-        console.log(response.data);
+        const response = await axios.post('http://pogo.gounane.ovh:3000/rentOffer');
+        
         return response.data;
       } catch (error) {
         console.error(error);
         return error;
       }
     };
+   
+    console.log(offres);
     
     useEffect(() => {
       fetchHandler().then((data) => setOffres(data.splice(0).reverse()))
     }, []);
-    console.log(offres
-      );
+    
     const options = [
         {
           label: "Fès",
@@ -99,7 +101,7 @@ export default function Reserver(){
     
         }).then((res)=>res.data)
       }
-    
+   
       const handleSubmit = (event) => {
         event.preventDefault();
         console.log({
@@ -121,129 +123,93 @@ export default function Reserver(){
             <Navbar />
             <div className="reserver-Container">
                 <div className="title-Container">
-                    <h1>Nos Offres</h1>
+                    <h1>Réservez maintenant </h1>
                 </div>
-                <div className="offre-Container">
-                    <div className="offre-Card">
-                        <h1>24 H / 69 DH</h1>
-                        <span className="distance">Vous aurez droit à 25 km</span>
-                        <div className="card-options">
-                        <div className="tarifChek-container">
-                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Assurance tous risques inclus</span></div>
-                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Livraison et ramassage gratuit</span></div>
-                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Casque offert</span></div>
+                <div className="reserver-Header">
+                      <h2>Choisissez votre plan ...</h2>
+                      <h1>Un pas de plus vers <span style={{color:'#03d3b9'}}>la liberté !</span></h1>
+                </div>
+                <div className="plans-Container">
+                    
+                    <div className="plan-Card">
+                        <div className="plan-props">
+                          <h2>Plan basic</h2>
+                          <h1 className="plan-Prix">119 Dhs</h1>
+                          <p>24H</p>
                         </div>
+                      <div className="scooter-Prop">
+                        <ul>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
+                        </ul>
+                      </div>
                     </div>
+                    <div className="plan-Card">
+                        <div className="plan-props">
+                          <h2>Plan basic</h2>
+                          <h1 className="plan-Prix">119 Dhs</h1>
+                          <p>24H</p>
+                        </div>
+                      <div className="scooter-Prop">
+                        <ul>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="plan-Card">
+                        <div className="plan-props">
+                          <h2>Plan basic</h2>
+                          <h1 className="plan-Prix">119 Dhs</h1>
+                          <p>24H</p>
+                        </div>
+                      <div className="scooter-Prop">
+                        <ul>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
+                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
                 </div>
-                <div className="offre-Card">
-                        <h1>24H / 99 DH</h1>
-                        <span className="distance">Vous aurez droit à 50 km</span>
-                        <div className="card-options">
-                            <div className="tarifChek-container">
-                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Assurance tous risques inclus</span></div>
-                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Livraison et ramassage de la moto gratuit</span></div>
-                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Casque offert</span></div>
+                <div className="reserver-Header">
+                    <h2>Choisissez votre véhicule ...</h2>
+                    <h1>Le commencement d'une grande <span  style={{color:'#03d3b9'}}>aventure !</span></h1>
+                </div>
+                <div className="flotte-Container">
+                    
+                    {
+                      offres.map((offre)=>{
+                        return(
+                          <>
+                            
+                            <div className="vehicule-Card">
+                              <div className="radioButton">
+                                <input type="radio" name="styles" id="box-shadow" className="custom-radio" />
+    
+                              </div>
+                              <h1>POGO {offre.vehiculeType.vehicule.typeName.charAt(0)}</h1>
+                              <div className="card-Thumb">
+                                <img src={`http://pogo.gounane.ovh:3000/${offre.vehiculeType.vehicule.image}`} className="card-img" />
+                              </div>
+
+                              <div className="scooter-Prop">
+                                <ul>
+                                    <li><img src={chek} style={{width:'25px'}} /><span>{offre.vehiculeType.vehiculeDescription[0]}</span></li>
+                                    <li><img src={chek} style={{width:'25px'}} /><span>{offre.vehiculeType.vehiculeDescription[1]}</span></li>
+                                    <li><img src={chek} style={{width:'25px'}} /><span>{offre.vehiculeType.vehiculeDescription[2]}</span></li>
+                                </ul>
+                              </div>
+
                             </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <div className="reserver-form" >
-                    <form id="contact" onSubmit={handleSubmit} >
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Place de la livraison</span>
-                        <select onChange={handlePlace}>
-                        {
-                            options.map((option) => (
-                             <option value={option.value}>{option.label}</option>
-                        ))
-                        }
-                        </select>
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Date de livraison</span>
-                        <input
-                            type="datetime-local"
-                            autoComplete="on"
-                            value={dateLivraison}
-                            onChange={handledateLivraison}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Date de ramassage</span>
-                        <input
-                            type="datetime-local"
-                            autoComplete="on"
-                            value={dateRamassage}
-                            onChange={handledateRamassage}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Nom complet</span>
-                        <input
-                            type="text"
-                            placeholder="Votre Nom"
-                            autoComplete="on"
-                            value={Nom}
-                            onChange={handleNom}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Téléphone</span>
-                        <input
-                            type="text"
-                            placeholder="+212.. "
-                            autoComplete="on"
-                            value={tele}
-                            onChange={handleTele}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Nombre de moto</span>
-                        <input
-                            type="text"
-                            placeholder="Nombre de moto"
-                            autoComplete="on"
-                            value={NombreMoto}
-                            onChange={handleNombreMoto}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Place de la livraison</span>
-                        <select onChange={handleOffre}>
-                        {
-                            offreOptions.map((option) => (
-                             <option value={option.value}>{option.label}</option>
-                        ))
-                        }
-                        </select>
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField btn">
-                        <button
-                            type="submit"
-                            id="form-submit"
-                            className="main-gradient-button"
-                            disabled={!dateLivraison ||  !dateRamassage  || !Nom || !NombreMoto || !tele }
-                        >
-                            Envoyer le message
-                        </button>
-                        </div>
-                    </form>
+                          </>
+                        )
+                      })
+                    }
+                    
                 </div>
             </div>
             <Footer />

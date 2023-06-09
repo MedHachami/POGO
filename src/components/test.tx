@@ -1,73 +1,192 @@
 import React from "react";
-import * as ReactDOMServer from "react-dom/server";
-// Import Swiper React components
-import { Swiper, SwiperSlide  } from 'swiper/react';
-import SwiperCore, { Pagination } from "swiper";
-
-import localise from '../assets/localise.jpg'
-import scan from '../assets/scan.jpg'
-import roule from '../assets/roule.jpg'
-import { Bs1Circle,Bs2Circle,Bs3Circle } from 'react-icons/bs';
-import cadre from '../assets/cadre.png'
-// Import Swiper styles
-import 'swiper/css';
-SwiperCore.use([Pagination]);
-export default () => {
-    const [swiper, setSwiper] = React.useState(null);
-    const pagination = {
-        clickable: true,
-        renderBullet: function (index, className) {
-          return ReactDOMServer.renderToStaticMarkup(<div>This renderToStaticMarkup will convert your JSX into html</div>);
-        },
-      };
-  return (
-    
-        <div className="how-Steps-Container">
-                <div className="how-Step">
-                    <div className="step">
-                        <span ><Bs1Circle size="50px" /></span>
-                        <h3>LOCALISE</h3>
-                        <dic className="line-height"></dic>
+import chek from '../../assets/check1.png'
+import pack from '../../assets/pack50.png'
+export default function TarifCard(props) {
+    return(
+        <div className="card">
+                    <div className="card-title">
+                        <h2>{props.packageName}</h2>
                     </div>
-                    <div className="step">
-                        <span ><Bs2Circle size="50px" /></span>
-                        <h3>SCAN</h3>
-                        <dic className="line-height"></dic>
+                    {/* <div className="card-thumb">
+                        <img src={require(`../../assets/${props.image}`)} alt={props.name} className="pack-img"/>
+                    </div> */}
+                    <div className="card-prixO">
+                        <h3>{props.creditsOffer - props.packageName.split(" ")[2]} DH offerts</h3>
+                        <p>Pour chaque {props.packageName.split(" ")[2]} DH rechargés, vous bénéficiez de <span style={{color:'#0d1721'}}>{props.creditsOffer} DH </span> de solde</p>
                     </div>
-                    <div className="step">
-                        <span ><Bs3Circle size="50px" /></span>
-                        <h3>ROULE</h3>
+                    <div className="card-options">
+                        <div className="tarifChek-container">
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>Le solde est valable 15 jours après l’achat du pack</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>Protection 100 du conducteur et du passager</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span>Assurance Responsabilité Civile</span></div>
+                        </div>
                     </div>
-                </div>
-                <div className="how-Step">
-                    <div className="cadre"><img src={cadre} style={{width:'100%'}}   /></div>
-                    <Swiper
-                        
-                        pagination={pagination}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        onSlideChange={(swiper) => console.log(swiper)}
-                        onSwiper={(swiper) => {
-                            setSwiper(swiper);
-                        }}
-                        
-                        onActiveIndexChange={(swiper) => {
-                            console.log("active index is", swiper.activeIndex);
-                        }}
-                    >
-                        <SwiperSlide style={{width:'350px'}}><img src={localise} className="imgSlide"  /></SwiperSlide>
-                        <SwiperSlide style={{width:'350px'}}><img src={scan} className="imgSlide"  /></SwiperSlide>
-                        <SwiperSlide style={{width:'350px'}}><img src={roule} className="imgSlide"  /></SwiperSlide>
-
-                    </Swiper>
-                </div>
-                <div className="how-Step">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div> 
-                  
-                
         </div>
+    )
+
+
+}
+http://pogo.gounane.ovh:3000/package
+
+
+/*****
+
+
+<div className="reserver-Container">
+                <div className="title-Container">
+                    <h1>Nos Offres</h1>
+                </div>
+                <div className="offre-Container">
+                    <div className="offre-Card">
+                        <h1>24 H / 69 DH</h1>
+                        <span className="distance">Vous aurez droit à 25 km</span>
+                        <div className="card-options">
+                        <div className="tarifChek-container">
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Assurance tous risques inclus</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Livraison et ramassage gratuit</span></div>
+                            <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}}>Casque offert</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="offre-Card">
+                        <h1>24H / 99 DH</h1>
+                        <span className="distance">Vous aurez droit à 50 km</span>
+                        <div className="card-options">
+                            <div className="tarifChek-container">
+                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Assurance tous risques inclus</span></div>
+                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Livraison et ramassage de la moto gratuit</span></div>
+                                <div className="tarif-Chek"><img src={chek} style={{width:'25px'}} /><span style={{marginTop:'5px'}} >Casque offert</span></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div className="reserver-form" >
+                    <form id="contact" onSubmit={handleSubmit} >
+                        
+                        <div className="inputField">
+                        <span className="Input_Titile">Place de la livraison</span>
+                        <select onChange={handlePlace}>
+                        {
+                            options.map((option) => (
+                             <option value={option.value}>{option.label}</option>
+                        ))
+                        }
+                        </select>
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Date de livraison</span>
+                        <input
+                            type="datetime-local"
+                            autoComplete="on"
+                            value={dateLivraison}
+                            onChange={handledateLivraison}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        
+                        <div className="inputField">
+                        <span className="Input_Titile">Date de ramassage</span>
+                        <input
+                            type="datetime-local"
+                            autoComplete="on"
+                            value={dateRamassage}
+                            onChange={handledateRamassage}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        
+                        <div className="inputField">
+                        <span className="Input_Titile">Nom complet</span>
+                        <input
+                            type="text"
+                            placeholder="Votre Nom"
+                            autoComplete="on"
+                            value={Nom}
+                            onChange={handleNom}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Téléphone</span>
+                        <input
+                            type="text"
+                            placeholder="+212.. "
+                            autoComplete="on"
+                            value={tele}
+                            onChange={handleTele}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Nombre de moto</span>
+                        <input
+                            type="text"
+                            placeholder="Nombre de moto"
+                            autoComplete="on"
+                            value={NombreMoto}
+                            onChange={handleNombreMoto}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Place de la livraison</span>
+                        <select onChange={handleOffre}>
+                        {
+                            offreOptions.map((option) => (
+                             <option value={option.value}>{option.label}</option>
+                        ))
+                        }
+                        </select>
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField btn">
+                        <button
+                            type="submit"
+                            id="form-submit"
+                            className="main-gradient-button"
+                            disabled={!dateLivraison ||  !dateRamassage  || !Nom || !NombreMoto || !tele }
+                        >
+                            Envoyer le message
+                        </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            ////
+
             
-   
-  );
-};
+input[type="radio"] {
+    appearance: none;
+    /* Safari support */
+    -webkit-appearance: none;
+    border: 0.2rem solid #fff;
+    
+    border-radius: 50%;
+  }
+  
+  /* Create a custom radio button */
+  input[type="radio"]::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #03d3b9;
+    margin-right: 5px;
+    
+  }
+  
+  /* Customize the circle color when selected */
+  input[type="radio"]:checked::before {
+    background-color: #03d3b9; 
+    box-shadow: 0 0 10px #03d3b9;
+  }

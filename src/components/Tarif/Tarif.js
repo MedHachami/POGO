@@ -16,7 +16,7 @@ export default function Tarif() {
 
 const fetchHandler = async () => {
   try {
-    const response = await axios.post('http://gounane.ovh:3000/package');
+    const response = await axios.post('http://pogo.gounane.ovh:3000/package');
     console.log(response.data);
     return response.data;
   } catch (error) {
@@ -33,6 +33,12 @@ useEffect(() => {
             <TarifCard key={packEL._id} {...packEL} />
         )
     })
+    // const TarifCards = packData.map((packEL)=>{
+    //     return(
+    //         <TarifCard  {...packEL} />
+    //     )
+    // })
+
     return (
       <>
         <Navbar />

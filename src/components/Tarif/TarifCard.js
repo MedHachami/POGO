@@ -1,8 +1,12 @@
 import React from "react";
 import chek from '../../assets/check1.png'
-import pack from '../../assets/pack50.png'
+import pack50 from '../../assets/pack50.png'
+import pack100 from '../../assets/pack100.png'
+import pack200 from '../../assets/pack200.png'
 export default function TarifCard(props) {
+    console.log(props);
     return(
+        
         <div className="card">
                     <div className="card-title">
                         <h2>{props.packageName}</h2>

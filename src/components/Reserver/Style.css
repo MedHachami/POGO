@@ -1,5 +1,123 @@
 
+.reserver-Header h2{
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+    font-family: Rubik;
+    margin-top: 100px;
+    
+}
+.reserver-Header h1{
+    font-weight: 900;
+    font-size: 45px;
+   text-align: center;
+    font-family: Nunito,sans-serif;
+    padding: 50px;
+    
+}
+.flotte-Container{
 
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    height: auto;
+    padding: 45px;
+}
+.vehicule-Card{
+    border: 2px solid #03d3b9;
+    border-radius: 10px;
+    font-family: Nunito,sans-serif;
+    
+}
+.vehicule-Card h1{
+    text-align: center;
+    color: #03d3b9;
+}
+
+.radioButton{
+    margin-left: 10rem;
+    position: relative;
+    top: -55px;
+}
+
+
+
+input[type="radio"] {
+    width: 30px;
+    height: 30px;
+    
+}
+
+.custom-radio {
+    /* hiding browser el */
+    appearance: none;
+    /* Safari support */
+    -webkit-appearance: none;
+    border: 0.2rem solid #fff;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* keyboard navigation focus appearance */
+.custom-radio:focus-visible {
+    outline-offset: 0;
+}
+
+#box-shadow {
+    box-shadow: 0 0 0 1px #03d3b9;
+}
+
+
+
+#box-shadow:checked {
+    box-shadow: 0 0 0 1px #03d3b9;
+    background-color: #03d3b9;
+    border-width: 0.2rem;
+    box-shadow: 0 0 5px #03d3b9;
+}
+
+
+.card-Thumb{
+    
+    
+    width: 350px;
+    height: 300px;
+}
+.card-img{
+    width: 100%;
+    height: 100%;
+}
+.plans-Container{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+}
+.plan-props{
+    text-align: center;
+}
+.plan-Card{
+    border: 2px solid #03d3b9;
+    border-radius:10px ;
+    margin: 25px;
+    padding: 35px 5px;
+    line-height: 30px;
+    
+}
+.plan-props h2{
+    padding: 20px;
+    color: #158073;
+}
+.plan-Prix{
+    font-size: 52px;
+    font-weight: 600;
+    color: #191f1e;
+}
+.plan-props p{
+    color: #4e4e55;
+    font-size: 30px;
+}
 .reserver-form{
     /* border: 1px solid red; */
     display: block;
@@ -18,7 +136,7 @@
 }
 .reserver-Container{
     /* border: 1px solid red; */
-    margin-top: 88px;
+    margin-top: 70px;
 }
 .title-Container {
     background-color: #0d1721;
@@ -27,12 +145,12 @@
     padding: 20px;
     text-align: center;
     border-radius: 20px;
-    
+    margin-top: 100px;
     height: 150px;
-    margin: 35px 12rem;
+    margin: 100px 12rem 25px 12rem;
     padding-top: 20px;
 }
-.reserver-Container h1{
+.title-Container h1{
     text-align: center;
     color: #03d3b9;
     font-size: 40px;

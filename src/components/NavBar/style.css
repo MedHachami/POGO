@@ -201,6 +201,10 @@ i {
 	.navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
+	.navbarSupportedContent{
+		height: 620px;
+		
+	}
 	
 }
 
