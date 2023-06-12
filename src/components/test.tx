@@ -61,103 +61,7 @@ http://pogo.gounane.ovh:3000/package
                     </div>
                 
                 </div>
-                <div className="reserver-form" >
-                    <form id="contact" onSubmit={handleSubmit} >
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Place de la livraison</span>
-                        <select onChange={handlePlace}>
-                        {
-                            options.map((option) => (
-                             <option value={option.value}>{option.label}</option>
-                        ))
-                        }
-                        </select>
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Date de livraison</span>
-                        <input
-                            type="datetime-local"
-                            autoComplete="on"
-                            value={dateLivraison}
-                            onChange={handledateLivraison}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Date de ramassage</span>
-                        <input
-                            type="datetime-local"
-                            autoComplete="on"
-                            value={dateRamassage}
-                            onChange={handledateRamassage}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        
-                        <div className="inputField">
-                        <span className="Input_Titile">Nom complet</span>
-                        <input
-                            type="text"
-                            placeholder="Votre Nom"
-                            autoComplete="on"
-                            value={Nom}
-                            onChange={handleNom}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Téléphone</span>
-                        <input
-                            type="text"
-                            placeholder="+212.. "
-                            autoComplete="on"
-                            value={tele}
-                            onChange={handleTele}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Nombre de moto</span>
-                        <input
-                            type="text"
-                            placeholder="Nombre de moto"
-                            autoComplete="on"
-                            value={NombreMoto}
-                            onChange={handleNombreMoto}
-                            required
-                        />
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField">
-                        <span className="Input_Titile">Place de la livraison</span>
-                        <select onChange={handleOffre}>
-                        {
-                            offreOptions.map((option) => (
-                             <option value={option.value}>{option.label}</option>
-                        ))
-                        }
-                        </select>
-                        <span className="valid_info_name"></span>
-                        </div>
-                        <div className="inputField btn">
-                        <button
-                            type="submit"
-                            id="form-submit"
-                            className="main-gradient-button"
-                            disabled={!dateLivraison ||  !dateRamassage  || !Nom || !NombreMoto || !tele }
-                        >
-                            Envoyer le message
-                        </button>
-                        </div>
-                    </form>
-                </div>
+                
             </div>
 
 
@@ -190,3 +94,28 @@ input[type="radio"] {
     background-color: #03d3b9; 
     box-shadow: 0 0 10px #03d3b9;
   }
+
+  /////
+
+ 
+      
+                <div className="plans-Container">
+                  <div className="plan-Card">
+                          <div className="radioButton">
+                                <input type="radio" name="plan" id="box-shadow" className="custom-radio" />
+    
+                          </div>
+                          <div className="plan-props">
+                            <h2>Plan basic</h2>
+                            <h1 className="plan-Prix">119 Dhs</h1>
+                            <p>24H</p>
+                          </div>
+                        <div className="scooter-Prop">
+                          <ul>
+                              <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
+                              <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
+                              <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
+                          </ul>
+                        </div>
+                    </div>
+                    </div>

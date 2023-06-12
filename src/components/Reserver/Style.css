@@ -35,11 +35,19 @@
 }
 
 .radioButton{
-    margin-left: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     top: -55px;
 }
-
+.plan-Card .radioButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -80px;
+}
 
 
 input[type="radio"] {
@@ -101,7 +109,7 @@ input[type="radio"] {
     border: 2px solid #03d3b9;
     border-radius:10px ;
     margin: 25px;
-    padding: 35px 5px;
+    padding: 16px 5px;
     line-height: 30px;
     
 }
@@ -127,7 +135,7 @@ input[type="radio"] {
   padding: 65px;
   /* margin-left: auto;
   margin-right: auto; */
-  margin: 4rem auto;
+  margin: 3rem auto;
   border-radius: 20px;
   background: rgba(255,255,255,.25);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
@@ -197,6 +205,14 @@ input[type="radio"] {
     border: 1px solid red;
     margin-top: 85px;
 }
+.success-msg {
+    text-transform: uppercase;
+    height: 35px;
+    color: #071e26;
+    margin-top: 12px;
+    gap: 1;
+    display: flex;
+}
 @media (max-width:999px){
     .reserver-form{
         width: 80%;
@@ -211,9 +227,56 @@ input[type="radio"] {
    .offre-Card{
         margin: 25px;
    }
+   .flotte-Container{
+    flex-direction: column;
+   }
+   .vehicule-Card:first-child{
+    margin-bottom: 65px;
+   }
+   .plans-Container{
+    flex-direction: column;
+   }
+   .plan-Card:first-child{
+    margin-bottom: 65px;
+   }
+   .title-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 85px;
+    height: 100px;
+    
+    }
+    .title-Container h1{
+        font-size: 26px;
+    }
+    .vehicule-Card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 
 @media (max-width:680px){
+    .card-Thumb{
+        display: block;
+        margin: auto;
+        width: 250px;
+    }
+    .card-img{
+        width: 100%;
+    }
+    .reserver-Header h2{
+        font-size: 28px;
+        
+    }
+    .reserver-Header h1{
+        font-size: 32px;
+       
+    }
     
 }
 

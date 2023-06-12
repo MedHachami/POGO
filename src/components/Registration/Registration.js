@@ -4,6 +4,8 @@ import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
 export default function Registration(){
   const history = useNavigate();
     const [city,setCity] = useState([])
@@ -14,6 +16,7 @@ export default function Registration(){
     const [password,setPassword] = useState('')
     const[tele,setTele] = useState('')
     const[chekedCity,setCheckedcity]=useState()
+    const [message,setMessage] =useState(null)
     const sendRequest = async ()=>{
       await axios.post("http://pogo.gounane.ovh:3000/client/create",{
          email:email,
@@ -27,7 +30,7 @@ export default function Registration(){
 
 
   
-      }).then((res)=>console.log(res.data))
+      }).then((res)=>res.data)
     }
   
    
@@ -74,7 +77,7 @@ export default function Registration(){
       const handleSubmit = (event) => {
         event.preventDefault();
         
-        sendRequest().then(()=>alert("Form Submitted Successfully"))
+        sendRequest().then(()=>setMessage('Account Created'))
     
       }; 
 
@@ -183,6 +186,18 @@ export default function Registration(){
                             Envoyer le message
                         </button>
                         </div>
+                        {
+                            message 
+                            && 
+                            <div className="success-msg">
+                                <div>
+                                  <FontAwesomeIcon icon={faCheck} style={{fontSize:'24px'}} />
+                                </div>
+                                <div>
+                                  <p>{message}</p>
+                                </div>  
+                            </div>
+                          }
                     </form>
                 </div>
             <Footer />

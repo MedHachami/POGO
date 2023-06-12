@@ -5,9 +5,11 @@ import Footer from '../Footer/Footer'
 import chek from '../../assets/check1.png'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
 export default function Reserver(){
   const [offres,setOffres] = useState([])
-  const [test,setTest] =useState({})
+  const [message,setMessage] =useState(null)
     const history = useNavigate();
     const fetchHandler = async () => {
       try {
@@ -20,46 +22,22 @@ export default function Reserver(){
       }
     };
    
-    console.log(offres);
+    
     
     useEffect(() => {
       fetchHandler().then((data) => setOffres(data.splice(0).reverse()))
     }, []);
     
-    const options = [
-        {
-          label: "Fès",
-          value: "fes",
-        },
-        {
-          label: "Rabat",
-          value: "rabat",
-        },
-        {
-          label: "Ben Guerir",
-          value: "ben guerir",
-        },
-       
-      ];
-      const offreOptions = [
-        {
-          label: "24H / 69 DH",
-          value: "offre1",
-        },
-        {
-          label: "24H /99 DH",
-          value: "offre2",
-        },
-        
-       
-      ];
+  
+   
     const [dateLivraison,setdateLivraison] = useState('')
     const[dateRamassage,setdateRamassage] = useState('')
     const[Nom,setNom]= useState('')
     const[NombreMoto,setNombreMoto] = useState('')
     const[tele,setTele] = useState('')
-    const[place,setPlace] = useState('fes')
-    const [offre,setOffre] = useState('offre1')
+    const[email,setEmail] = useState('')
+    const[place,setPlace] = useState('')
+    const[offre,setOffre] = useState('')
 
     const handledateLivraison = (event) => {
         setdateLivraison(event.target.value);
@@ -72,6 +50,9 @@ export default function Reserver(){
       const handleNom = (event) => {
         setNom(event.target.value);
       };
+      const handleEmail = (event) => {
+        setEmail(event.target.value);
+      };
       const handleNombreMoto = (event) => {
         setNombreMoto(event.target.value);
       };
@@ -82,37 +63,40 @@ export default function Reserver(){
       const handlePlace = (event) => {
         setPlace(event.target.value);
       };
-      const handleOffre = (event) => {
-        setOffre(event.target.value);
-      };
+     
 
       const sendRequest = async ()=>{
-        await axios.post("",{
-           adress:place,
-           clientId:null,
-           phoneNumber:tele,
-           pickupDate:dateLivraison,
-           returnDate:dateRamassage,
-           amount:NombreMoto,
-           rentOffer:offre,
-           orderType:'onArrival'
+        await axios.post("http://pogo.gounane.ovh:3000/rent/create",{
+          "address":place,
+          "phone":tele,
+          "pickupDate":dateLivraison,
+          "returnDate":dateRamassage,
+          "amount":NombreMoto,
+          "email":email,
+          "rentOffer":offre,
+          "orderType":"onArrival",
+          "fullName":Nom
 
 
     
-        }).then((res)=>res.data)
+        }).then((res)=>{
+          setMessage(res.data.message);
+          console.log(res.data.message);
+        })
       }
-   
+   console.log("this : " + message);
       const handleSubmit = (event) => {
         event.preventDefault();
         console.log({
-          adress:place,
-          clientId:null,
-          phoneNumber:tele,
+          address:place,
+          phone:tele,
           pickupDate:dateLivraison,
           returnDate:dateRamassage,
           amount:NombreMoto,
+          email:email,
           rentOffer:offre,
-          orderType:'onArrival'
+          orderType:"onArrival",
+          fullName:Nom
         });
         sendRequest().then(()=>history('/reserver'))
     
@@ -123,58 +107,9 @@ export default function Reserver(){
             <Navbar />
             <div className="reserver-Container">
                 <div className="title-Container">
-                    <h1>Réservez maintenant </h1>
+                    <h1>Réservez maintenant en 3 étapes</h1>
                 </div>
-                <div className="reserver-Header">
-                      <h2>Choisissez votre plan ...</h2>
-                      <h1>Un pas de plus vers <span style={{color:'#03d3b9'}}>la liberté !</span></h1>
-                </div>
-                <div className="plans-Container">
-                    
-                    <div className="plan-Card">
-                        <div className="plan-props">
-                          <h2>Plan basic</h2>
-                          <h1 className="plan-Prix">119 Dhs</h1>
-                          <p>24H</p>
-                        </div>
-                      <div className="scooter-Prop">
-                        <ul>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="plan-Card">
-                        <div className="plan-props">
-                          <h2>Plan basic</h2>
-                          <h1 className="plan-Prix">119 Dhs</h1>
-                          <p>24H</p>
-                        </div>
-                      <div className="scooter-Prop">
-                        <ul>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="plan-Card">
-                        <div className="plan-props">
-                          <h2>Plan basic</h2>
-                          <h1 className="plan-Prix">119 Dhs</h1>
-                          <p>24H</p>
-                        </div>
-                      <div className="scooter-Prop">
-                        <ul>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Jusqu’a 50 km d'autonomie par jour</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Protection 100% du conducteur et du passager</span></li>
-                            <li><img src={chek} style={{width:'25px'}} /><span>Assurance tout risques</span></li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                </div>
+                
                 <div className="reserver-Header">
                     <h2>Choisissez votre véhicule ...</h2>
                     <h1>Le commencement d'une grande <span  style={{color:'#03d3b9'}}>aventure !</span></h1>
@@ -188,7 +123,7 @@ export default function Reserver(){
                             
                             <div className="vehicule-Card">
                               <div className="radioButton">
-                                <input type="radio" name="styles" id="box-shadow" className="custom-radio" />
+                                <input type="radio" name="vehicule" id="box-shadow" className="custom-radio" />
     
                               </div>
                               <h1>POGO {offre.vehiculeType.vehicule.typeName.charAt(0)}</h1>
@@ -210,6 +145,158 @@ export default function Reserver(){
                       })
                     }
                     
+                </div>
+                <div className="reserver-Header">
+                      <h2>Choisissez votre plan ...</h2>
+                      <h1>Un pas de plus vers <span style={{color:'#03d3b9'}}>la liberté !</span></h1>
+                </div>
+                <div className="plans-Container">
+                  {
+                    offres.map((offre)=>{
+                      return(
+                        <div className="plan-Card">
+                            <div className="radioButton">
+                                  <input type="radio"
+                                   name="plan" 
+                                   id="box-shadow"
+                                    className="custom-radio"
+                                     value={offre._id}
+                                     onChange={(e) => setOffre(e.target.value)} 
+                                  />
+      
+                            </div>
+                            <div className="plan-props">
+                              <h2>Plan basic</h2>
+                              <h1 className="plan-Prix">{offre.prix} Dhs</h1>
+                              <p>{offre.period} H</p>
+                            </div>
+                          <div className="scooter-Prop">
+                            <ul>
+                                <li><img src={chek} style={{width:'25px'}} /><span>{offre.description[0]}</span></li>
+                                <li><img src={chek} style={{width:'25px'}} /><span>{offre.description[1]}</span></li>
+                                <li><img src={chek} style={{width:'25px'}} /><span>{offre.description[2]}</span></li>
+                            </ul>
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+                <div className="reserver-Header">
+                        <h2>Renseignez vos informations ...</h2>
+                        <h1>L'évasion est à portée de main !</h1>
+                </div>
+                <div className="reserver-form" >
+                
+                    <form id="contact" onSubmit={handleSubmit} >
+                        <div className="inputField">
+                        <span className="Input_Titile">Nom complet</span>
+                        <input
+                            type="text"
+                            placeholder="Votre Nom"
+                            autoComplete="on"
+                            value={Nom}
+                            onChange={handleNom}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Téléphone</span>
+                        <input
+                            type="text"
+                            placeholder="+212.. "
+                            autoComplete="on"
+                            value={tele}
+                            onChange={handleTele}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Email</span>
+                        <input
+                            type="email"
+                            placeholder="you@mymail.com "
+                            autoComplete="on"
+                            value={email}
+                            onChange={handleEmail}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Nombre de moto</span>
+                        <input
+                            type="text"
+                            placeholder="Nombre de moto"
+                            autoComplete="on"
+                            value={NombreMoto}
+                            onChange={handleNombreMoto}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                        <span className="Input_Titile">Date de livraison</span>
+                        <input
+                            type="datetime-local"
+                            autoComplete="on"
+                            value={dateLivraison}
+                            onChange={handledateLivraison}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        
+                        <div className="inputField">
+                        <span className="Input_Titile">Date de ramassage</span>
+                        <input
+                            type="datetime-local"
+                            autoComplete="on"
+                            value={dateRamassage}
+                            onChange={handledateRamassage}
+                            required
+                        />
+                        <span className="valid_info_name"></span>
+                        </div>
+                        <div className="inputField">
+                            <span className="Input_Titile">Adresse</span>
+                        <textarea
+                            name="Adresse"
+                            id="message"
+                            placeholder="Votre Adresse"
+                            value={place}
+                            onChange={handlePlace}
+                        ></textarea>
+                        <span className="valid_info_message"></span>
+                        </div>
+                        <div className="inputField btn">
+                        <button
+                            type="submit"
+                            id="form-submit"
+                            className="main-gradient-button"
+                            disabled={!dateLivraison ||  !dateRamassage  || !Nom || !NombreMoto || !tele || !offre || !place}
+                        >
+                            Reserver
+                        </button>
+                        
+                        </div>
+                        {
+                            message 
+                            && 
+                            <div className="success-msg">
+                                <div>
+                                  <FontAwesomeIcon icon={faCheck} style={{fontSize:'24px'}} />
+                                </div>
+                                <div>
+                                  <p>{message}</p>
+                                </div>  
+                            </div>
+                          }
+                         
+                        
+                    </form>
                 </div>
             </div>
             <Footer />
